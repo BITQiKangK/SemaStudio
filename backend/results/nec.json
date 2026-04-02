@@ -1,0 +1,192 @@
+{
+    "all_optimizers": 0.0,
+    "cumulative_optimizer_timing": 0.0,
+    "planner": 0.0,
+    "planner_binding": 0.0,
+    "physical_planner": 0.0,
+    "physical_planner_column_binding": 0.0,
+    "physical_planner_resolve_types": 0.0,
+    "physical_planner_create_plan": 0.0,
+    "optimizer_common_subexpressions": 0.0,
+    "optimizer_statistics_propagation": 0.0,
+    "optimizer_unused_columns": 0.0,
+    "optimizer_unnest_rewriter": 0.0,
+    "optimizer_deliminator": 0.0,
+    "optimizer_join_order": 0.0,
+    "optimizer_in_clause": 0.0,
+    "optimizer_regex_range": 0.0,
+    "optimizer_cte_filter_pusher": 0.0,
+    "optimizer_empty_result_pullup": 0.0,
+    "optimizer_filter_pushdown": 0.0,
+    "optimizer_filter_pullup": 0.0,
+    "latency": 0.0,
+    "optimizer_compressed_materialization": 0.0,
+    "result_set_size": 0,
+    "optimizer_top_n": 0.0,
+    "optimizer_limit_pushdown": 0.0,
+    "optimizer_build_side_probe_side": 0.0,
+    "cumulative_rows_scanned": 0,
+    "optimizer_column_lifetime": 0.0,
+    "optimizer_common_aggregate": 0.0,
+    "cumulative_cardinality": 0,
+    "extra_info": {
+        "pde_input_nl_expressions": "[\"s'{Translated_Review} is a complete sentence and has informative content and has informative content'\", \"s'{Translated_Review} is a positive user review'\", \"s'{Translated_Review} shows that this app is suitable for kids'\"]",
+        "pde_deduction_llm_cost": "0.000705",
+        "pde_deduction_output_sql_expressions": "[\"Translated_Review != 'nan'\"]",
+        "pde_reflect_llm_cost": "0.000493",
+        "pde_output_sql_expressions": "[\"(Translated_Review != CAST('nan' AS VARCHAR))\"]",
+        "pde_time_ms": "4753",
+        "pde_total_llm_cost": "0.001198",
+        "nec_batch_size": "3",
+        "nec_compression_inputs": "[\"{Translated_Review} is a complete sentence and has informative content and has informative content\",\"{Translated_Review} is a positive user review\",\"{Translated_Review} shows that this app is suitable for kids\"]",
+        "nec_compression_outputs": "[\"{Translated_Review} is a complete, informative sentence\",\"{Translated_Review} is a positive user review\",\"{Translated_Review} shows the app is suitable for kids\"]",
+        "nec_verify_results": "[true,true,true]",
+        "nec_compression_ok": "true",
+        "nec_verify_ok": "true",
+        "nec_compression_llm_cost": "0.000390",
+        "nec_verify_llm_cost": "0.000222",
+        "nec_compression_time_ms": "4092",
+        "nec_verify_time_ms": "1756",
+        "nec_total_calls": "3",
+        "nec_successful": "3",
+        "nec_skipped_short": "0",
+        "nec_total_llm_cost": "0.000612",
+        "nec_compression_total_time_ms": "4092",
+        "nec_verify_total_time_ms": "1756",
+        "nec_total_time_ms": "5848"
+    },
+    "cpu_time": 0.0,
+    "blocked_thread_time": 0.0,
+    "optimizer_reorder_filter": 0.0,
+    "query_name": "",
+    "rows_returned": 0,
+    "optimizer_duplicate_groups": 0.0,
+    "optimizer_late_materialization": 0.0,
+    "optimizer_sum_rewriter": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_extension": 0.0,
+    "optimizer_join_filter_pushdown": 0.0,
+    "optimizer_sampling_pushdown": 0.0,
+    "optimizer_expression_rewriter": 0.0,
+    "children": [
+        {
+            "result_set_size": 0,
+            "operator_timing": 0.0,
+            "operator_rows_scanned": 0,
+            "cumulative_rows_scanned": 0,
+            "operator_cardinality": 0,
+            "operator_type": "EXPLAIN_ANALYZE",
+            "cumulative_cardinality": 0,
+            "extra_info": {},
+            "cpu_time": 0.0,
+            "operator_name": "EXPLAIN_ANALYZE",
+            "children": [
+                {
+                    "result_set_size": 0,
+                    "operator_timing": 0.0,
+                    "operator_rows_scanned": 0,
+                    "cumulative_rows_scanned": 0,
+                    "operator_cardinality": 0,
+                    "operator_type": "PROJECTION",
+                    "cumulative_cardinality": 0,
+                    "extra_info": {
+                        "Projections": "id",
+                        "Estimated Cardinality": "478"
+                    },
+                    "cpu_time": 0.0,
+                    "operator_name": "PROJECTION",
+                    "children": [
+                        {
+                            "result_set_size": 0,
+                            "operator_timing": 2.209979521,
+                            "operator_rows_scanned": 0,
+                            "cumulative_rows_scanned": 0,
+                            "operator_cardinality": 0,
+                            "operator_type": "SEM_FILTER",
+                            "cumulative_cardinality": 0,
+                            "extra_info": {
+                                "Semantic Expression": "(s'{Translated_Review} is a complete, informative sentence, batch_size=1' AND s'{Translated_Review} is a positive user review, batch_size=1' AND s'{Translated_Review} shows the app is suitable for kids, batch_size=1')",
+                                "Estimated Cardinality": "478",
+                                "input_tokens": "0",
+                                "output_tokens": "0",
+                                "total_requests": "5910",
+                                "successful_requests": "0",
+                                "failure_requests": "5910",
+                                "retry_requests": "0",
+                                "retry_successful_requests": "0",
+                                "retry_failure_requests": "0",
+                                "error_requests": "5910",
+                                "parse_success": "0",
+                                "parse_failure": "0"
+                            },
+                            "cpu_time": 0.0,
+                            "operator_name": "SEM_FILTER",
+                            "children": [
+                                {
+                                    "result_set_size": 236400,
+                                    "operator_timing": 0.0037590799999999997,
+                                    "operator_rows_scanned": 0,
+                                    "cumulative_rows_scanned": 0,
+                                    "operator_cardinality": 5910,
+                                    "operator_type": "HASH_JOIN",
+                                    "cumulative_cardinality": 0,
+                                    "extra_info": {
+                                        "Join Type": "INNER",
+                                        "Conditions": "App = App",
+                                        "Estimated Cardinality": "478"
+                                    },
+                                    "cpu_time": 0.0,
+                                    "operator_name": "HASH_JOIN",
+                                    "children": [
+                                        {
+                                            "result_set_size": 1489040,
+                                            "operator_timing": 0.014059368999999995,
+                                            "operator_rows_scanned": 64286,
+                                            "cumulative_rows_scanned": 0,
+                                            "operator_cardinality": 37226,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 0,
+                                            "extra_info": {
+                                                "Table": "user_reviews",
+                                                "Type": "Sequential Scan",
+                                                "Projections": [
+                                                    "App",
+                                                    "Translated_Review",
+                                                    "id"
+                                                ],
+                                                "Filters": "Translated_Review!='nan'",
+                                                "Estimated Cardinality": "12857"
+                                            },
+                                            "cpu_time": 0.0,
+                                            "operator_name": "SEQ_SCAN ",
+                                            "children": []
+                                        },
+                                        {
+                                            "result_set_size": 31552,
+                                            "operator_timing": 0.00027246000000000003,
+                                            "operator_rows_scanned": 10840,
+                                            "cumulative_rows_scanned": 0,
+                                            "operator_cardinality": 1972,
+                                            "operator_type": "TABLE_SCAN",
+                                            "cumulative_cardinality": 0,
+                                            "extra_info": {
+                                                "Table": "playstore",
+                                                "Type": "Sequential Scan",
+                                                "Projections": "App",
+                                                "Filters": "Category='FAMILY'",
+                                                "Estimated Cardinality": "319"
+                                            },
+                                            "cpu_time": 0.0,
+                                            "operator_name": "SEQ_SCAN ",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
